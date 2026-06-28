@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Wake Forest University campus guide for assessing AI literacy, AI fluency, and AI competency across students, faculty, and staff." />
+  <title>AI Assessment Campus Guide | Wake Forest University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --wfu-gold: #9E7E38;
+  --wfu-gold-text: #8c6d2c;
+  --wfu-black: #000000;
+  --wfu-text: #222222;
+  --wfu-gray: #53565A;
+  --wfu-athletics-gold: #CEB888;
+  --paper: #f6f2ea;
+  --paper-2: #fbfaf7;
+  --white: #ffffff;
+  --ink: #151515;
+  --muted: #62666d;
+  --line: rgba(20, 20, 20, 0.13);
+  --line-strong: rgba(20, 20, 20, 0.24);
+  --shadow: 0 24px 62px rgba(0, 0, 0, 0.11);
+  --soft-shadow: 0 14px 34px rgba(0, 0, 0, 0.07);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body {
+  margin: 0;
+  color: var(--wfu-text);
+  background:
+    linear-gradient(90deg, rgba(158,126,56,0.045) 1px, transparent 1px),
+    linear-gradient(180deg, #f8f6f0 0%, #ffffff 32%, #f4f0e7 100%);
+  background-size: 76px 100%, auto;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  line-height: 1.58;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 1000;
+  background: var(--wfu-athletics-gold);
+  color: var(--wfu-black);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 900;
+}
+.skip-link:focus { top: 16px; }
+.site-shell { min-height: 100vh; overflow: visible; }
+body { overflow-x: hidden; }
+.topbar {
+  background: var(--wfu-black);
+  color: rgba(255,255,255,0.86);
+  font-size: 0.74rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(206,184,136,0.24);
+}
+.topbar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 24px;
+}
+.topbar strong { color: var(--wfu-athletics-gold); }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.nav-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 10px 24px;
+}
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  min-width: 285px;
+}
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--wfu-black);
+  border: 1px solid rgba(158,126,56,0.62);
+  color: var(--wfu-athletics-gold);
+  font-family: "Cormorant", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.04em;
+  box-shadow: inset 0 0 0 4px rgba(206,184,136,0.08);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+.brand-text span:first-child {
+  font-family: "Cormorant", Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--wfu-black);
+}
+.brand-text span:last-child {
+  margin-top: 3px;
+  color: var(--wfu-gold-text);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+.nav-links a {
+  text-decoration: none;
+  padding: 7px 9px;
+  border-radius: 6px;
+  color: #2a2a2a;
+  font-weight: 850;
+  font-size: 0.82rem;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links a.active {
+  background: rgba(158,126,56,0.13);
+  color: var(--wfu-black);
+  outline: none;
+}
+.nav-links .button-link {
+  background: var(--wfu-black);
+  color: var(--white);
+  border-radius: 999px;
+  padding-inline: 13px;
+  margin-left: 6px;
+}
+.nav-links .button-link:hover,
+.nav-links .button-link:focus,
+.nav-links .button-link.active { background: var(--wfu-gold); color: var(--wfu-black); }
+.hero, .page-hero {
+  position: relative;
+  isolation: isolate;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(206,184,136,0.10) 1px, transparent 1px),
+    linear-gradient(135deg, #030303 0%, #111111 48%, #211a0c 100%);
+  background-size: 76px 100%, auto;
+  border-bottom: 6px solid var(--wfu-gold);
+}
+.hero::before, .page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(206,184,136,0.20), transparent 38%),
+    radial-gradient(circle at 84% 24%, rgba(206,184,136,0.16), transparent 31%);
+  z-index: -2;
+}
+.hero::after, .page-hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(16px, 7vw, 98px);
+  top: 42px;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(206,184,136,0.28);
+  box-shadow: 0 0 0 32px rgba(206,184,136,0.028), 0 0 0 68px rgba(206,184,136,0.018);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  min-height: 380px;
+  padding: 44px 24px 42px;
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 52px;
+  align-items: center;
+}
+.page-hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 34px 24px 32px;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 44px;
+  align-items: end;
+}
+.eyebrow, .kicker {
+  color: var(--wfu-athletics-gold);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+}
+.kicker { color: var(--wfu-gold-text); }
+h1, h2, h3 { margin: 0; color: inherit; }
+h1, .page-hero h1 {
+  margin-top: 8px;
+  font-family: "Cormorant", Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.55rem, 5.2vw, 4.75rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  max-width: 780px;
+}
+.page-hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.85rem); }
+.hero-copy, .page-copy {
+  margin: 14px 0 0;
+  max-width: 780px;
+  color: rgba(255,255,255,0.84);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+.page-copy { margin-top: 10px; }
+.hero-actions, .page-actions, .callout-actions, .pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.93rem;
+}
+.btn-primary { background: var(--wfu-athletics-gold); color: var(--wfu-black); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+.btn-secondary { background: transparent; color: currentColor; border-color: rgba(206,184,136,0.46); }
+.btn-light { background: var(--white); color: var(--wfu-black); border-color: var(--line); }
+.btn:hover, .btn:focus { transform: translateY(-1px); outline: none; }
+.hero-panel, .page-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.055));
+  border: 1px solid rgba(206,184,136,0.30);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.panel-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(206,184,136,0.20);
+}
+.panel-title h2 { font-family: "Cormorant", Georgia, serif; font-size: 1.65rem; line-height: 1; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(206,184,136,0.35);
+  color: var(--wfu-athletics-gold);
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 0.69rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.progress-stack { display: grid; gap: 14px; padding-top: 18px; }
+.progress-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 15px;
+  align-items: start;
+  padding: 16px;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(206,184,136,0.16);
+  border-radius: var(--radius-md);
+}
+.progress-num {
+  width: 38px; height: 38px; border-radius: 999px; background: var(--wfu-athletics-gold); color: var(--wfu-black);
+  display: grid; place-items: center; font-weight: 950;
+}
+.progress-item h3 { font-family: "Cormorant", Georgia, serif; font-size: 1.45rem; }
+.progress-item p { color: rgba(255,255,255,0.78); margin: 5px 0 0; }
+.breadcrumbs {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+.breadcrumbs a { color: rgba(255,255,255,0.82); text-decoration-color: rgba(206,184,136,0.6); }
+main { background: transparent; }
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 74px 24px;
+}
+.section.compact { padding-top: 62px; padding-bottom: 62px; }
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 34px;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 24px;
+}
+.section-heading h2 {
+  margin-top: 10px;
+  font-family: "Cormorant", Georgia, serif;
+  color: var(--wfu-black);
+  font-size: clamp(2.15rem, 4vw, 3.45rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.section-heading p { margin: 0; color: var(--muted); font-size: 1.03rem; line-height: 1.7; }
+.cards-3, .audience-grid, .method-grid, .credential-grid, .overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.level-card, .audience-card, .method-card, .credential, .overview-card {
+  background: rgba(255,255,255,0.91);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--soft-shadow);
+}
+.level-label, .mini-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--wfu-gold-text);
+  font-size: 0.73rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.level-card h3, .audience-card h3, .method-card h3, .credential h3, .overview-card h3 {
+  margin-top: 18px;
+  font-family: "Cormorant", Georgia, serif;
+  color: var(--wfu-black);
+  font-size: 2rem;
+  line-height: 1;
+}
+.level-card p, .audience-card p, .method-card p, .credential p, .overview-card p { color: var(--muted); margin-bottom: 0; }
+.question {
+  margin-top: 22px;
+  padding: 14px;
+  background: var(--paper);
+  border-left: 4px solid var(--wfu-gold);
+  color: var(--wfu-black);
+  font-weight: 900;
+}
+.comparison {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background: var(--wfu-black);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.comparison div { padding: 24px; border-right: 1px solid rgba(255,255,255,0.13); }
+.comparison div:last-child { border-right: none; }
+.comparison strong { display: block; font-family: "Cormorant", Georgia, serif; font-size: 2rem; color: var(--wfu-athletics-gold); }
+.comparison span { color: rgba(255,255,255,0.76); font-weight: 700; }
+.audience-card header { display: flex; align-items: center; gap: 14px; }
+.audience-card h3 { margin-top: 0; }
+.icon-circle {
+  width: 48px; height: 48px; border-radius: 999px; display: grid; place-items: center;
+  background: var(--wfu-black); color: var(--wfu-athletics-gold); font-weight: 950; letter-spacing: 0.05em;
+}
+ul { padding-left: 1.2rem; color: var(--muted); }
+li { margin: 7px 0; }
+.band { background: linear-gradient(180deg, rgba(0,0,0,0.035), rgba(158,126,56,0.075)); border-block: 1px solid var(--line); }
+.rubric, .matrix-wrap { background: rgba(255,255,255,0.94); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--soft-shadow); }
+.rubric-row { display: grid; grid-template-columns: 1.05fr repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+.rubric-row:last-child { border-bottom: none; }
+.rubric-row > div { padding: 17px; border-right: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
+.rubric-row > div:last-child { border-right: none; }
+.rubric-dimension { background: var(--wfu-black); color: var(--wfu-athletics-gold) !important; font-weight: 950; text-transform: uppercase; letter-spacing: 0.08em; }
+.rubric strong { display: block; color: var(--wfu-black); margin-bottom: 7px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: var(--wfu-black); color: var(--wfu-athletics-gold); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+td { color: var(--muted); }
+td:first-child { color: var(--wfu-black); width: 18%; }
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: steps; }
+.timeline-step { position: relative; background: rgba(255,255,255,0.92); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--soft-shadow); }
+.timeline-step::before { content: attr(data-step); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 999px; background: var(--wfu-gold); color: var(--wfu-black); font-weight: 950; margin-bottom: 18px; }
+.timeline-step h3 { font-family: "Cormorant", Georgia, serif; color: var(--wfu-black); font-size: 1.8rem; }
+.credential-grid { grid-template-columns: repeat(4,1fr); }
+.credential span { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 999px; background: var(--wfu-black); color: var(--wfu-athletics-gold); font-weight: 950; }
+.credential h3 { font-size: 1.65rem; }
+.callout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 28px;
+  background: var(--wfu-black);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+.callout h2 { font-family: "Cormorant", Georgia, serif; font-size: 2.25rem; color: var(--wfu-athletics-gold); }
+.callout p { margin-bottom: 0; color: rgba(255,255,255,0.78); }
+.pager {
+  margin-top: 34px;
+  justify-content: space-between;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 22px;
+}
+.pager a { text-decoration: none; }
+.footer { background: var(--wfu-black); color: rgba(255,255,255,0.76); border-top: 6px solid var(--wfu-gold); }
+.footer-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; padding: 40px 24px; }
+.footer h2 { font-family: "Cormorant", Georgia, serif; color: var(--wfu-athletics-gold); font-size: 2rem; }
+.footer a { color: var(--wfu-athletics-gold); }
+.toast { position: fixed; right: 18px; bottom: 18px; background: var(--wfu-black); color: var(--white); padding: 12px 16px; border-radius: 999px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .2s, transform .2s; }
+.toast.show { opacity: 1; transform: translateY(0); }
+@media (max-width: 980px) {
+  .hero-inner, .page-hero-inner, .section-heading, .callout, .footer-inner { grid-template-columns: 1fr; }
+  .cards-3, .audience-grid, .method-grid, .overview-grid { grid-template-columns: 1fr; }
+  .credential-grid, .timeline { grid-template-columns: repeat(2, 1fr); }
+  .rubric-row { grid-template-columns: 1fr; }
+  .rubric-row > div { border-right: none; }
+  .comparison { grid-template-columns: 1fr; }
+  .comparison div { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.13); }
+  .nav-wrap { align-items: flex-start; flex-direction: column; }
+  .brand-lockup { min-width: 0; }
+}
+@media (max-width: 640px) {
+  .topbar-inner { align-items: flex-start; flex-direction: column; }
+  .nav-links { justify-content: flex-start; }
+  .hero-inner { min-height: auto; padding-top: 34px; }
+  .hero::after, .page-hero::after { display: none; }
+  .credential-grid, .timeline { grid-template-columns: 1fr; }
+  h1, .page-hero h1 { font-size: 2.45rem; }
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  tr { border-bottom: 1px solid var(--line); }
+  td:first-child { width: auto; background: var(--paper); }
+}
+@media print {
+  .site-header, .topbar, .hero-actions, .page-actions, .pager, .toast { display: none !important; }
+  body { background: white; }
+  .hero, .page-hero, .footer { color: black; background: white; border: none; }
+  .hero-panel, .page-panel, .level-card, .audience-card, .method-card, .credential, .overview-card, .matrix-wrap, .rubric { box-shadow: none; }
+}
+
+
+/* Single-file page-style navigation */
+.guide-page { display: none; }
+.guide-page.active { display: block; }
+.nav-links a[aria-current="page"] { background: rgba(158,126,56,0.13); color: var(--wfu-black); }
+.nav-links .button-link[aria-current="page"] { background: var(--wfu-gold); color: var(--wfu-black); }
+@media print { .guide-page { display: block !important; page-break-after: always; } .nav-links, .pager, .topbar, .hero-actions, .callout-actions { display: none !important; } }
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="site-shell">
+    <div class="topbar"><div class="topbar-inner"><span><strong>Wake Forest University</strong> campus guide</span><span>AI literacy | AI fluency | AI competency</span></div></div>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand-lockup" href="?page=overview" data-page="overview" aria-label="Wake Forest University AI Assessment Campus Guide home">
+          <div class="brand-mark" aria-hidden="true">WFU</div>
+          <div class="brand-text"><span>AI Assessment Campus Guide</span><span>Wake Forest University</span></div>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation"><a href="?page=overview" data-page="overview">Overview</a><a href="?page=framework" data-page="framework">Framework</a><a href="?page=audiences" data-page="audiences">Audiences</a><a href="?page=assessment" data-page="assessment">Assessment</a><a href="?page=rubric" data-page="rubric">Rubric</a><a href="?page=matrix" data-page="matrix">Matrix</a><a href="?page=roadmap" data-page="roadmap">Roadmap</a><a class="button-link" href="?page=share" data-page="share">Share</a></nav>
+      </div>
+    </header>
+    <div class="guide-page" id="page-overview" data-title="Overview">
+<section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Campus guide</div>
+          <h1>Assessing AI capability with institutional clarity.</h1>
+          <p class="hero-copy">A Wake Forest campus resource for distinguishing AI literacy, AI fluency, and AI competency across students, faculty, and professional staff. Use it to align learning outcomes, assessment design, credentialing, and responsible AI adoption.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="?page=framework" data-page="framework">Review the framework</a><button class="btn btn-secondary" type="button" onclick="window.print()">Print or save as PDF</button></div>
+        </div>
+        <aside class="hero-panel" aria-label="Capability progression summary">
+          <div class="panel-title"><h2>Capability progression</h2><span class="badge">Understand | Apply | Deliver</span></div>
+          <div class="progress-stack">
+            <article class="progress-item"><div class="progress-num">1</div><div><h3>AI Literacy</h3><p>Understands AI concepts, limitations, risks, and responsible use.</p></div></article>
+            <article class="progress-item"><div class="progress-num">2</div><div><h3>AI Fluency</h3><p>Uses AI effectively through prompting, iteration, verification, and workflow integration.</p></div></article>
+            <article class="progress-item"><div class="progress-num">3</div><div><h3>AI Competency</h3><p>Creates meaningful academic, professional, or operational value with AI.</p></div></article>
+          </div>
+        </aside>
+      </div>
+    </section>
+<main id="main">
+      <section class="section compact">
+        <div class="section-heading"><div><div class="kicker">Guide structure</div><h2>Page-style navigation in one shareable file.</h2></div><p>This version keeps the guide in a single HTML file while making each navigation item behave like a dedicated page. Colleagues can move through the resource without jumping across one long scrolling document.</p></div>
+        <div class="overview-grid">
+          <article class="overview-card"><h3>Shared Language</h3><p>Define literacy, fluency, and competency in a way that can travel across academic and administrative settings.</p><p><a class="btn btn-light" href="?page=framework" data-page="framework">Open framework</a></p></article>
+          <article class="overview-card"><h3>Audience Evidence</h3><p>Apply one common model while preserving evidence that is appropriate for students, faculty, and professional staff.</p><p><a class="btn btn-light" href="?page=audiences" data-page="audiences">Open audiences</a></p></article>
+          <article class="overview-card"><h3>Assessment Design</h3><p>Match knowledge checks, performance tasks, rubrics, portfolios, and credentials to the right capability level.</p><p><a class="btn btn-light" href="?page=assessment" data-page="assessment">Open assessment</a></p></article>
+        </div>
+        <div class="pager"><span></span><a class="btn btn-primary" href="?page=framework" data-page="framework">Next: Framework &rarr;</a></div>
+      </section>
+    </main>
+</div><div class="guide-page" id="page-framework" data-title="Framework">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Framework</div><div class="eyebrow">Institutional language</div></div>
+        <div><h1>One capability framework with three assessment standards.</h1><p class="page-copy">Institutions often use these terms interchangeably. A disciplined framework separates foundational understanding, applied practice, and measurable value creation.</p></div>
+      </div>
+    </section>
+<main><section class="section">
+      <div class="cards-3">
+        <article class="level-card"><div class="level-label"><span>Level 1</span><span>01</span></div><h3>AI Literacy</h3><p>Foundational understanding of what AI is, how it works at a conceptual level, where it is useful, where it can fail, and how to use it responsibly.</p><div class="question">Assessment question: Do they understand AI?</div></article>
+        <article class="level-card"><div class="level-label"><span>Level 2</span><span>02</span></div><h3>AI Fluency</h3><p>Practical ability to use AI tools effectively by prompting, refining, comparing outputs, verifying claims, and integrating AI into real workflows.</p><div class="question">Assessment question: Can they work with AI?</div></article>
+        <article class="level-card"><div class="level-label"><span>Level 3</span><span>03</span></div><h3>AI Competency</h3><p>Consistent ability to produce high-quality outcomes with AI in academic, professional, research, teaching, or operational contexts.</p><div class="question">Assessment question: Can they create value with AI?</div></article>
+      </div>
+      <div class="comparison"><div><strong>Literacy</strong><span>Knowledge and judgment</span></div><div><strong>Fluency</strong><span>Application and workflow</span></div><div><strong>Competency</strong><span>Performance and value</span></div></div>
+      <div class="pager"><a class="btn btn-light" href="?page=overview" data-page="overview">&larr; Return to previous page: Overview</a><a class="btn btn-primary" href="?page=audiences" data-page="audiences">Next: Audiences &rarr;</a></div>
+    </section></main>
+</div><div class="guide-page" id="page-audiences" data-title="Audiences">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Audiences</div><div class="eyebrow">Audience strategy</div></div>
+        <div><h1>Apply one model while preserving role-specific evidence.</h1><p class="page-copy">Students, faculty, and professional staff all need AI capability, but the evidence of learning should look different for each group.</p></div>
+      </div>
+    </section>
+<main><section class="section compact">
+      <div class="audience-grid">
+        <article class="audience-card"><header><div class="icon-circle" aria-hidden="true">ST</div><h3>Students</h3></header><p>Focus on academic integrity, career readiness, responsible tool use, and discipline-specific problem solving.</p><ul><li>Orientation modules and knowledge checks</li><li>Course-based AI assignments and simulations</li><li>Portfolios, capstones, internships, and applied projects</li></ul></article>
+        <article class="audience-card"><header><div class="icon-circle" aria-hidden="true">FA</div><h3>Faculty</h3></header><p>Focus on teaching design, assessment integrity, scholarship, advising, and ethical integration into learning environments.</p><ul><li>Responsible-use certification and case discussions</li><li>AI-enhanced assignment redesign</li><li>Evidence of improved learning, feedback, or research workflows</li></ul></article>
+        <article class="audience-card"><header><div class="icon-circle" aria-hidden="true">PS</div><h3>Professional Staff</h3></header><p>Focus on productivity, service quality, communication, decision support, student support, and process improvement.</p><ul><li>Data privacy and institutional policy scenarios</li><li>Workflow demonstrations and tool selection exercises</li><li>Documented before-and-after operational improvements</li></ul></article>
+      </div>
+      <div class="pager"><a class="btn btn-light" href="?page=framework" data-page="framework">&larr; Return to previous page: Framework</a><a class="btn btn-primary" href="?page=assessment" data-page="assessment">Next: Assessment &rarr;</a></div>
+    </section></main>
+</div><div class="guide-page" id="page-assessment" data-title="Assessment">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Assessment</div><div class="eyebrow">Assessment architecture</div></div>
+        <div><h1>Match evidence to capability level.</h1><p class="page-copy">A quiz can measure literacy, but it cannot prove fluency or competency. A strong campus approach combines knowledge checks, authentic tasks, and evidence of meaningful outcomes.</p></div>
+      </div>
+    </section>
+<main><section class="section compact">
+      <div class="method-grid">
+        <article class="method-card"><span class="mini-label">AI Literacy</span><h3>Knowledge check</h3><p>Use short modules, quizzes, and scenario-based questions to confirm baseline understanding.</p><ul><li>AI definitions and terminology</li><li>Hallucinations and verification</li><li>Privacy, bias, copyright, and security</li><li>Institutional policies and appropriate use</li></ul></article>
+        <article class="method-card"><span class="mini-label">AI Fluency</span><h3>Performance task</h3><p>Use authentic exercises where participants must prompt, iterate, evaluate, and revise.</p><ul><li>Prompt design and refinement</li><li>Output comparison and critique</li><li>Evidence checking and source review</li><li>Integration into a course, research, or work process</li></ul></article>
+        <article class="method-card"><span class="mini-label">AI Competency</span><h3>Evidence portfolio</h3><p>Use deliverables and impact evidence to show that AI has improved outcomes.</p><ul><li>Final product or process artifact</li><li>Documented human judgment</li><li>Responsible-use reflection</li><li>Quality, efficiency, learning, or service impact</li></ul></article>
+      </div>
+      <div class="pager"><a class="btn btn-light" href="?page=audiences" data-page="audiences">&larr; Return to previous page: Audiences</a><a class="btn btn-primary" href="?page=rubric" data-page="rubric">Next: Rubric &rarr;</a></div>
+    </section></main>
+</div><div class="guide-page" id="page-rubric" data-title="Rubric">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Rubric</div><div class="eyebrow">Campus rubric</div></div>
+        <div><h1>Assess the behaviors that matter.</h1><p class="page-copy">This rubric can be adapted for a course assignment, professional development pathway, workshop, badge, or campus certificate.</p></div>
+      </div>
+    </section>
+<main><section class="section">
+      <div class="rubric" aria-label="AI capability rubric">
+        <div class="rubric-row"><div class="rubric-dimension">Understanding</div><div><strong>Beginning</strong>Recognizes AI tools but has limited understanding of strengths, weaknesses, or risks.</div><div><strong>Developing</strong>Explains basic AI concepts and identifies obvious use cases and limitations.</div><div><strong>Proficient</strong>Connects AI concepts to responsible use, verification, and human oversight.</div><div><strong>Advanced</strong>Applies nuanced judgment to risks, policy, ethics, and domain context.</div></div>
+        <div class="rubric-row"><div class="rubric-dimension">Use of AI</div><div><strong>Beginning</strong>Uses a single prompt and accepts output with little review.</div><div><strong>Developing</strong>Uses clearer prompts and performs basic edits.</div><div><strong>Proficient</strong>Iterates, compares outputs, checks claims, and adapts tool use to the task.</div><div><strong>Advanced</strong>Designs reliable workflows that combine AI output with expert human judgment.</div></div>
+        <div class="rubric-row"><div class="rubric-dimension">Quality of outcome</div><div><strong>Beginning</strong>Output is generic, incomplete, or weakly aligned to purpose.</div><div><strong>Developing</strong>Output is useful but requires substantial human correction.</div><div><strong>Proficient</strong>Output is accurate, polished, and appropriate for the intended audience.</div><div><strong>Advanced</strong>Output creates measurable improvement in learning, work quality, insight, or efficiency.</div></div>
+        <div class="rubric-row"><div class="rubric-dimension">Responsible practice</div><div><strong>Beginning</strong>Shows limited attention to privacy, bias, attribution, or policy.</div><div><strong>Developing</strong>Identifies common risks but may not address them consistently.</div><div><strong>Proficient</strong>Uses AI transparently, protects sensitive data, and verifies important claims.</div><div><strong>Advanced</strong>Models responsible adoption and helps others make informed AI decisions.</div></div>
+      </div>
+      <div class="pager"><a class="btn btn-light" href="?page=assessment" data-page="assessment">&larr; Return to previous page: Assessment</a><a class="btn btn-primary" href="?page=matrix" data-page="matrix">Next: Matrix &rarr;</a></div>
+    </section></main>
+</div><div class="guide-page" id="page-matrix" data-title="Matrix">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Matrix</div><div class="eyebrow">Decision matrix</div></div>
+        <div><h1>Match the method to the audience.</h1><p class="page-copy">Use this as a starting point for campus units, academic programs, and administrative offices.</p></div>
+      </div>
+    </section>
+<main><section class="section compact"><div class="matrix-wrap"><table><thead><tr><th>Audience</th><th>AI Literacy</th><th>AI Fluency</th><th>AI Competency</th></tr></thead><tbody>
+      <tr><td><strong>Students</strong></td><td>Orientation module, Canvas quiz, digital badge, academic integrity scenarios.</td><td>Course assignments, discipline-specific simulations, prompt-refinement exercises, peer critique.</td><td>Portfolio, capstone, internship project, research deliverable, professional simulation.</td></tr>
+      <tr><td><strong>Faculty</strong></td><td>Responsible-use certification, policy scenarios, academic integrity case studies.</td><td>Assignment redesign, AI-enhanced feedback demonstration, classroom activity prototype.</td><td>Evidence of improved teaching, assessment design, student learning, advising, or scholarship workflow.</td></tr>
+      <tr><td><strong>Professional Staff</strong></td><td>Privacy, FERPA, security, bias, policy, and responsible-use knowledge checks.</td><td>Workflow demonstrations, communication drafts, report generation, tool-selection exercises.</td><td>Documented process improvement, time savings, service improvement, decision-support artifact, innovation project.</td></tr>
+      </tbody></table></div><div class="pager"><a class="btn btn-light" href="?page=rubric" data-page="rubric">&larr; Return to previous page: Rubric</a><a class="btn btn-primary" href="?page=roadmap" data-page="roadmap">Next: Roadmap &rarr;</a></div></section></main>
+</div><div class="guide-page" id="page-roadmap" data-title="Roadmap">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Roadmap</div><div class="eyebrow">Adoption roadmap</div></div>
+        <div><h1>A phased path for campus adoption.</h1><p class="page-copy">Start with a common language, pilot in a few high-value contexts, and scale through reusable rubrics and evidence portfolios.</p></div>
+      </div>
+    </section>
+<main><section class="section compact"><div class="timeline">
+      <article class="timeline-step" data-step="1"><h3>Define</h3><ul><li>Adopt shared definitions</li><li>Clarify policy boundaries</li><li>Select priority audiences</li></ul></article>
+      <article class="timeline-step" data-step="2"><h3>Pilot</h3><ul><li>Run a literacy module</li><li>Test performance tasks</li><li>Gather feedback</li></ul></article>
+      <article class="timeline-step" data-step="3"><h3>Credential</h3><ul><li>Create badges or certificates</li><li>Publish rubrics</li><li>Document evidence standards</li></ul></article>
+      <article class="timeline-step" data-step="4"><h3>Improve</h3><ul><li>Review outcomes</li><li>Update for new tools</li><li>Scale communities of practice</li></ul></article>
+      </div><div class="pager"><a class="btn btn-light" href="?page=matrix" data-page="matrix">&larr; Return to previous page: Matrix</a><a class="btn btn-primary" href="?page=share" data-page="share">Next: Recognition &rarr;</a></div></section></main>
+</div><div class="guide-page" id="page-share" data-title="Share">
+<section class="page-hero">
+      <div class="page-hero-inner">
+        <div><div class="breadcrumbs"><a href="?page=overview" data-page="overview">Overview</a> / Share</div><div class="eyebrow">Recognition model</div></div>
+        <div><h1>Use a four-level recognition model.</h1><p class="page-copy">Credentialing makes the framework visible, portable, and easy to communicate across departments and programs.</p></div>
+      </div>
+    </section>
+<main><section class="section compact">
+      <div class="credential-grid">
+        <article class="credential"><span>1</span><h3>AI Literate</h3><p>Understands AI concepts, risks, and responsible use expectations.</p></article>
+        <article class="credential"><span>2</span><h3>AI Fluent</h3><p>Uses AI effectively in authentic academic or workplace tasks.</p></article>
+        <article class="credential"><span>3</span><h3>AI Competent</h3><p>Produces high-quality, value-adding outcomes with AI.</p></article>
+        <article class="credential"><span>4</span><h3>AI Leader</h3><p>Mentors others, designs workflows, evaluates tools, and promotes responsible innovation.</p></article>
+      </div>
+      <div class="callout"><div><h2>Guiding principle</h2><p>The strongest AI assessment frameworks move beyond asking whether someone knows about AI or can use a tool. They evaluate whether people can apply AI responsibly to solve meaningful problems, exercise sound judgment, and create measurable value.</p></div><div class="callout-actions"><button class="btn btn-primary" type="button" id="copyLink">Copy page link</button><button class="btn btn-secondary" type="button" onclick="window.print()">Print or save as PDF</button></div></div>
+      <div class="pager"><a class="btn btn-light" href="?page=roadmap" data-page="roadmap">&larr; Return to previous page: Roadmap</a><a class="btn btn-primary" href="?page=overview" data-page="overview">Back to overview</a></div>
+    </section></main>
+</div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div><h2>Wake Forest University AI Assessment Campus Guide</h2><p>Prepared as a campus-wide resource for discussion, adaptation, and responsible AI capability development.</p></div>
+        <div><p>Visual system uses Wake Forest brand colors and publicly listed WFU typefaces. For official logo usage, use approved assets from the <a href="https://brand.wfu.edu/" target="_blank" rel="noopener">Wake Forest Brand Guide</a>.</p></div>
+      </div>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Link copied</div>
+  <script>
+(function(){
+  const pageOrder = ["overview","framework","audiences","assessment","rubric","matrix","roadmap","share"];
+  const pageLabels = {overview:"Overview",framework:"Framework",audiences:"Audiences",assessment:"Assessment",rubric:"Rubric",matrix:"Matrix",roadmap:"Roadmap",share:"Share"};
+  const toast = document.getElementById('toast');
+  function showToast(message) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    window.setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+  function getPageFromUrl(){
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get('page') || 'overview';
+    return pageOrder.includes(requested) ? requested : 'overview';
+  }
+  function setPage(page, push){
+    if (!pageOrder.includes(page)) page = 'overview';
+    document.querySelectorAll('.guide-page').forEach(panel => panel.classList.toggle('active', panel.id === 'page-' + page));
+    document.querySelectorAll('[data-page]').forEach(link => {
+      const active = link.getAttribute('data-page') === page;
+      if (active) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+    });
+    document.title = (page === 'overview' ? 'AI Assessment Campus Guide' : pageLabels[page] + ' | AI Assessment Campus Guide') + ' | Wake Forest University';
+    if (push) {
+      const url = page === 'overview' ? window.location.pathname : window.location.pathname + '?page=' + page;
+      history.pushState({page}, '', url);
+    }
+    const main = document.getElementById('main');
+    if (main) main.focus({preventScroll:true});
+    window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+  }
+  document.addEventListener('click', function(event){
+    const nav = event.target.closest('[data-page]');
+    if (!nav) return;
+    const page = nav.getAttribute('data-page');
+    if (!pageOrder.includes(page)) return;
+    event.preventDefault();
+    setPage(page, true);
+  });
+  window.addEventListener('popstate', function(){ setPage(getPageFromUrl(), false); });
+  document.addEventListener('click', async function(event){
+    const copyButton = event.target.closest('#copyLink');
+    if (!copyButton) return;
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast('Page link copied');
+    } catch (error) {
+      showToast('Copy unavailable in this browser');
+    }
+  });
+  setPage(getPageFromUrl(), false);
+})();
+</script>
+</body>
+</html>
